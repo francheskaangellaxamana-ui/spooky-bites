@@ -1,0 +1,306 @@
+:root {
+  --night: #14091f;
+  --plum: #2b1245;
+  --pumpkin: #ff8a1f;
+  --bone: #fff3dc;
+  --slime: #9dff7a;
+  --blood: #ff5c6c;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Nunito", Arial, sans-serif;
+  background: var(--night);
+  color: var(--bone);
+  line-height: 1.5;
+}
+
+h1, h2, h3 {
+  font-family: "Eater", Georgia, serif;
+  font-weight: 400;
+  letter-spacing: .5px;
+}
+
+/* ---------- Navigation ---------- */
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 8%;
+  background: rgba(20, 9, 31, .92);
+  border-bottom: 2px solid var(--plum);
+}
+
+nav h2 {
+  font-size: 1.6rem;
+  color: var(--pumpkin);
+}
+
+nav a {
+  color: var(--bone);
+  text-decoration: none;
+  margin-left: 18px;
+  font-weight: 600;
+  padding: 6px 2px;
+  border-bottom: 2px solid transparent;
+  transition: .3s;
+}
+
+nav a:hover {
+  color: var(--pumpkin);
+  border-bottom-color: var(--pumpkin);
+}
+
+/* ---------- Hero banner ---------- */
+header {
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+  padding: 80px 15px 70px;
+  background: linear-gradient(180deg, var(--plum) 0%, var(--night) 100%);
+}
+
+.moon {
+  position: absolute;
+  top: -70px;
+  right: 10%;
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 35%, #ffd08a, var(--pumpkin) 70%);
+  box-shadow: 0 0 80px 20px rgba(255, 138, 31, .35);
+}
+
+header h1, header p, header button {
+  position: relative;
+}
+
+header h1 {
+  font-size: clamp(2.2rem, 7vw, 4rem);
+  color: var(--pumpkin);
+  margin-bottom: 12px;
+}
+
+#status {
+  display: inline-block;
+  margin-top: 18px;
+  padding: 6px 18px;
+  border-radius: 999px;
+  font-weight: 800;
+  border: 2px solid var(--slime);
+  color: var(--slime);
+}
+
+#status.closed {
+  border-color: var(--blood);
+  color: var(--blood);
+}
+
+header button {
+  display: block;
+  max-width: 260px;
+  margin: 18px auto 0;
+  background: transparent;
+  border: 2px solid var(--bone);
+}
+
+header button:hover {
+  background: var(--bone);
+  color: var(--night);
+}
+
+/* ---------- Menu ---------- */
+main {
+  padding: 50px 8%;
+}
+
+main h2 {
+  text-align: center;
+  font-size: 2.2rem;
+  color: var(--pumpkin);
+  margin-bottom: 28px;
+}
+
+.menu {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+article {
+  text-align: center;
+  padding: 28px 22px;
+  background: var(--plum);
+  border: 2px dashed var(--pumpkin);
+  border-radius: 6px 22px 6px 22px;
+  transition: .3s;
+}
+
+article:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 30px rgba(255, 138, 31, .25);
+}
+
+.icon {
+  display: block;
+  font-size: 3rem;
+  margin-bottom: 6px;
+}
+
+article h3 {
+  font-size: 1.5rem;
+}
+
+article p {
+  margin: 8px 0 14px;
+  color: #d9c8ee;
+}
+
+article b {
+  display: inline-block;
+  padding: 4px 16px;
+  border-radius: 999px;
+  background: var(--pumpkin);
+  color: var(--night);
+  font-size: 1.1rem;
+}
+
+/* ---------- Order slip ---------- */
+#order {
+  max-width: 520px;
+  margin: 60px auto 20px;
+  padding: 30px 28px;
+  text-align: center;
+  background: var(--bone);
+  color: var(--night);
+  border-radius: 16px;
+  border-left: 10px solid var(--pumpkin);
+}
+
+#order h2 {
+  color: var(--plum);
+  margin-bottom: 14px;
+}
+
+input, select, button {
+  width: 100%;
+  padding: 12px;
+  margin: 7px 0;
+  font-family: inherit;
+  font-size: 1rem;
+  border: 2px solid #d8c9ac;
+  border-radius: 8px;
+}
+
+input, select {
+  background: white;
+  color: var(--night);
+}
+
+input:focus, select:focus, button:focus-visible, nav a:focus-visible {
+  outline: 3px solid var(--pumpkin);
+  outline-offset: 2px;
+}
+
+button {
+  background: var(--plum);
+  color: white;
+  font-weight: 800;
+  border-color: var(--plum);
+  cursor: pointer;
+  transition: .3s;
+}
+
+button:hover {
+  background: var(--pumpkin);
+  border-color: var(--pumpkin);
+  color: var(--night);
+  transform: scale(1.02);
+}
+
+#orderBtn {
+  background: var(--pumpkin);
+  border-color: var(--pumpkin);
+  color: var(--night);
+}
+
+#orderBtn:hover {
+  background: var(--plum);
+  border-color: var(--plum);
+  color: white;
+}
+
+#greeting {
+  color: #b03a00;
+  font-weight: 800;
+}
+
+#result {
+  margin-top: 16px;
+  padding: 14px;
+  border: 2px dashed #b9a883;
+  border-radius: 8px;
+  background: #fff9ec;
+}
+
+/* ---------- Footer ---------- */
+footer {
+  text-align: center;
+  padding: 24px 15px;
+  margin-top: 40px;
+  background: var(--plum);
+  border-top: 3px solid var(--pumpkin);
+}
+
+/* ---------- Small screens ---------- */
+@media (max-width: 650px) {
+  nav {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  nav a {
+    margin: 0 8px;
+  }
+
+  .moon {
+    width: 130px;
+    height: 130px;
+    right: -20px;
+  }
+
+  header {
+    padding: 60px 15px 50px;
+  }
+
+  .menu {
+    grid-template-columns: 1fr;
+  }
+
+  main {
+    padding: 35px 5%;
+  }
+
+  #order {
+    padding: 24px 18px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}
